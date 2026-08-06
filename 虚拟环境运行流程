@@ -1,0 +1,16 @@
+1. 确认虚拟环境还存在
+Test-Path .\.venv\Scripts\python.exe
+如果返回：True
+说明虚拟环境安装正常。
+
+2. 临时允许当前终端运行脚本
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+该设置只对当前 VS Code 终端有效，不需要管理员权限，关闭终端后自动恢复，比较安全。
+
+3. 再次激活虚拟环境
+.\.venv\Scripts\Activate.ps1
+成功后终端前面会出现：(.venv) PS D:\数据分析\knowledge-base-agent>
+
+4. 验证 Python 路径
+python -c "import sys; print(sys.executable)"
+应该输出类似：D:\数据分析\knowledge-base-agent\.venv\Scripts\python.exe
